@@ -19,3 +19,21 @@
 | RF15 | El sistema debe permitir generar reportes por período académico, facultad, escuela y nivel de riesgo. |
 | RF16 | El sistema debe enviar notificaciones relacionadas con nuevas alertas y acciones de seguimiento. |
 | RF17 | El sistema debe registrar las operaciones relevantes realizadas por los usuarios para fines de auditoría. |
+
+
+## Relación entre historias de usuario y requisitos funcionales
+
+| Historia | Requisitos |
+|---|---|
+| HU01 | RF04 |
+| HU02 | RF06, RF08, RF09 |
+| HU03 | RF05, RF07 |
+| HU04 | RF10 |
+| HU05 | RF11 |
+| HU06 | RF12 |
+| HU07 | RF14 |
+| HU08 | RF15 |
+| HU09 | RF04 |
+| HU10 | RF01, RF02 |
+| HU11 | RF03 |
+| HU12 | RF05, RF13 |
