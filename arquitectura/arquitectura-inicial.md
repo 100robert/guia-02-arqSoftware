@@ -10,11 +10,14 @@ flowchart TD
 %% =========================
 subgraph ACTORES["ACTORES"]
     Estudiante["Estudiante"]
-    Tutor["Tutor"]
-    Bienestar["Bienestar Universitario"]
-    Coordinador["Coordinador Académico"]
+    Docente["Docente"]
     Admin["Administrador"]
 end
+
+%% =========================
+%% EDGE
+%% =========================
+Cloudflare["Cloudflare<br/>DNS / CDN / Protección"]
 
 %% =========================
 %% PRESENTACIÓN
@@ -28,15 +31,15 @@ end
 %% LÓGICA DE NEGOCIO
 %% =========================
 subgraph NEGOCIO["LÓGICA DE NEGOCIO"]
-    Auth["Autenticación y Roles"]
-    Students["Estudiantes"]
-    Academic["Información Académica"]
-    Risk["Evaluación de Riesgo"]
-    Alerts["Alertas"]
-    Interventions["Intervenciones"]
-    Tracking["Seguimiento"]
-    Reports["Reportes"]
-    Audit["Auditoría"]
+    Usuarios["Usuarios"]
+    Evaluaciones["Evaluaciones"]
+    Perfil["Modelo del Estudiante"]
+    Adaptativo["Motor Adaptativo"]
+    Contenidos["Contenidos"]
+    Ejercicios["Ejercicios"]
+    Feedback["Retroalimentación"]
+    Progreso["Progreso"]
+    Analitica["Analítica Docente"]
 end
 
 %% =========================
@@ -47,11 +50,9 @@ subgraph DATOS["DATOS"]
 end
 
 %% =========================
-%% SISTEMAS EXTERNOS
+%% EXTERNOS
 %% =========================
 subgraph EXTERNOS["SISTEMAS EXTERNOS"]
-    AcademicSystem["Sistema Académico"]
-    ML["Motor Inteligente / IA"]
     Notifications["Servicio de Notificaciones"]
 end
 
@@ -59,24 +60,41 @@ end
 %% FLUJO
 %% =========================
 
-ACTORES --> Web
+ACTORES --> Cloudflare
+Cloudflare --> Web
 Web --> API
 API --> NEGOCIO
 NEGOCIO --> BD
 
-AcademicSystem --> Academic
-Risk --> ML
-Alerts --> Notifications
+Evaluaciones --> Perfil
+Perfil --> Adaptativo
+Adaptativo --> Contenidos
+Adaptativo --> Ejercicios
+Ejercicios --> Feedback
+Feedback --> Perfil
+Perfil --> Progreso
+
+Progreso --> Notifications
 ```
 
 ## Descripción
 
-La arquitectura inicial se organiza en tres capas principales:
+La arquitectura inicial se organiza en tres capas principales.
 
-- **Presentación:** permite la interacción de estudiantes, tutores, responsables de bienestar, coordinadores y administradores mediante una aplicación web conectada a una API REST.
+- **Presentación:** permite la interacción de estudiantes, docentes y
+administradores mediante una aplicación web conectada a una API REST.
 
-- **Lógica de negocio:** contiene los módulos responsables de autenticación, gestión de estudiantes, información académica, evaluación del riesgo, alertas, intervenciones, seguimiento, reportes y auditoría.
+- **Lógica de negocio:** contiene los módulos de usuarios, evaluaciones,
+modelo del estudiante, motor adaptativo, contenidos, ejercicios,
+retroalimentación, progreso y analítica docente.
 
-- **Datos:** almacena la información académica, evaluaciones de riesgo, intervenciones y demás información persistente utilizando PostgreSQL.
+- **Datos:** almacena la información de usuarios, contenidos, respuestas,
+niveles de dominio, progreso y demás información persistente mediante
+PostgreSQL.
 
-El sistema también contempla integración con un sistema académico como fuente de información, un motor inteligente encargado del análisis del riesgo y un servicio de notificaciones para la distribución de alertas.
+Cloudflare funciona como capa de entrada de la solución, proporcionando
+servicios de distribución y protección del tráfico antes de que las solicitudes
+alcancen la aplicación.
+
+El servicio de notificaciones constituye una integración externa utilizada
+para entregar avisos relacionados con actividades y progreso.

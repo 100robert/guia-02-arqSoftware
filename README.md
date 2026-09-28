@@ -1,21 +1,38 @@
-# Sistema Inteligente para la Detección Temprana y Seguimiento del Riesgo de Deserción Universitaria
+# Mentelyx
 
-## Integrante
+## Plataforma educativa de aprendizaje personalizado con inteligencia artificial
 
-Robert Briceño Ramos Quintanilla
+### Descripción
 
-## Descripción
+Mentelyx es una plataforma educativa orientada a instituciones educativas,
+diseñada para proporcionar experiencias de aprendizaje personalizadas mediante
+inteligencia artificial.
 
-Sistema orientado a identificar tempranamente estudiantes universitarios que presentan indicadores asociados al riesgo de deserción académica.
+La propuesta está dirigida inicialmente a estudiantes de educación secundaria
+y busca complementar el trabajo realizado por los docentes dentro de las
+instituciones educativas.
 
-La plataforma permitirá centralizar información académica y de seguimiento, analizar indicadores de riesgo, generar alertas para tutores y responsables académicos y registrar las intervenciones realizadas sobre los estudiantes identificados.
+Cada institución podrá organizar sus docentes y grupos de estudiantes dentro
+de la plataforma.
 
-El sistema funcionará como herramienta de apoyo para la toma de decisiones y no reemplazará el criterio profesional de tutores, docentes o responsables de bienestar universitario.
+Los estudiantes realizarán inicialmente una evaluación diagnóstica que permitirá
+identificar los conocimientos que dominan y las habilidades en las que presentan
+dificultades.
 
-## Curso
+A partir de los resultados del diagnóstico y de las posteriores interacciones
+con ejercicios, contenidos, pistas y actividades, Mentelyx mantendrá un perfil
+individual de aprendizaje para cada estudiante.
 
-Arquitectura de Software – IS-488
+Un componente inteligente analizará continuamente el desempeño y estimará el
+nivel de dominio alcanzado en cada habilidad.
 
-## Semestre
+A partir de estas estimaciones, la plataforma seleccionará contenidos,
+ejercicios, actividades de refuerzo y rutas de aprendizaje adaptadas a las
+necesidades de cada estudiante.
 
-2026-II
+Los docentes podrán consultar el progreso de sus grupos e identificar las
+habilidades o temas que presentan mayores dificultades.
+
+La primera versión utilizará Matemática en educación secundaria como dominio
+inicial de validación, manteniendo la posibilidad de incorporar posteriormente
+nuevas áreas curriculares e instituciones educativas.
