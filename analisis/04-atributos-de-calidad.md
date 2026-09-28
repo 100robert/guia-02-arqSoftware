@@ -4,40 +4,43 @@
 
 | ID | Atributo de calidad | Escenario de calidad |
 |---|---|---|
-| AC01 | Rendimiento | Las operaciones frecuentes de aprendizaje, como obtener actividades, registrar respuestas, solicitar pistas y consultar retroalimentación, deben mantener tiempos de respuesta adecuados durante períodos de alta concurrencia. |
-| AC02 | Escalabilidad | El sistema debe soportar aproximadamente 1 500 usuarios concurrentes durante una operación habitual y permitir escenarios de prueba con picos de hasta 15 000 usuarios concurrentes. |
-| AC03 | Disponibilidad | Una falla parcial de un componente o instancia no debe provocar necesariamente la indisponibilidad completa de Mentelyx. |
-| AC04 | Confiabilidad | Las respuestas e interacciones realizadas por los estudiantes no deben perderse ni registrarse accidentalmente más de una vez. |
-| AC05 | Seguridad | La información personal, credenciales, progreso y resultados de los estudiantes deben estar protegidos frente a accesos no autorizados. |
-| AC06 | Privacidad | La información individual relacionada con el aprendizaje de un estudiante solamente debe estar disponible para usuarios autorizados. |
-| AC07 | Mantenibilidad | Los principales componentes del sistema deben estar organizados de manera que puedan modificarse sin afectar innecesariamente otras funcionalidades. |
-| AC08 | Adaptabilidad | El sistema debe poder modificar las actividades presentadas en función de la evolución del perfil de aprendizaje del estudiante. |
-| AC09 | Usabilidad | La interfaz debe permitir que un estudiante pueda realizar actividades, solicitar ayuda y consultar su progreso de manera sencilla desde dispositivos móviles o computadoras. |
-| AC10 | Interoperabilidad | El sistema debe permitir futuras integraciones con otros servicios educativos mediante interfaces claramente definidas. |
-| AC11 | Observabilidad | La solución debe permitir obtener información sobre errores, carga, tiempos de respuesta y comportamiento de sus principales componentes. |
-| AC12 | Evolutividad | La incorporación de nuevas asignaturas o áreas de conocimiento no debe requerir rediseñar completamente la solución. |
-| AC13 | Eficiencia de conectividad | Las funcionalidades principales de aprendizaje deben minimizar la transferencia innecesaria de datos y mantener una experiencia utilizable cuando el estudiante acceda mediante conexiones de capacidad limitada o inestable. |
+| AC01 | Rendimiento | Las operaciones frecuentes de aprendizaje, como obtener actividades, registrar respuestas, solicitar pistas y consultar retroalimentación, deben mantener tiempos de respuesta adecuados incluso durante períodos de alta concurrencia. |
+| AC02 | Escalabilidad | Mentelyx debe soportar aproximadamente 1 500 usuarios concurrentes durante una operación habitual y escenarios de prueba de hasta 15 000 usuarios concurrentes. |
+| AC03 | Disponibilidad | Una falla parcial de un componente no debe provocar necesariamente la indisponibilidad completa de la plataforma. |
+| AC04 | Confiabilidad | Las respuestas, resultados, progreso y operaciones asociadas a las suscripciones no deben perderse ni registrarse accidentalmente más de una vez. |
+| AC05 | Seguridad | Las cuentas, información educativa, funcionalidades administrativas y operaciones de suscripción deben estar protegidas frente a accesos no autorizados. |
+| AC06 | Privacidad | La información individual de aprendizaje únicamente debe estar disponible para el propio estudiante y los usuarios expresamente autorizados. |
+| AC07 | Mantenibilidad | Los principales componentes del sistema deben organizarse de forma que los cambios en una funcionalidad no afecten innecesariamente a otras partes de Mentelyx. |
+| AC08 | Adaptabilidad | La plataforma debe modificar las actividades y su dificultad en función de la evolución del perfil de aprendizaje del estudiante. |
+| AC09 | Usabilidad | Las principales funcionalidades deben ser comprensibles y fáciles de utilizar para estudiantes desde dispositivos móviles y computadoras. |
+| AC10 | Evolutividad | La incorporación de nuevos niveles, áreas, cursos y tipos de actividad no debe requerir reconstruir completamente la solución. |
+| AC11 | Observabilidad | La plataforma debe permitir identificar errores, tiempos de respuesta, carga, utilización de recursos y comportamiento de los componentes principales. |
+| AC12 | Eficiencia de costos | El uso de infraestructura y servicios de inteligencia artificial debe poder ajustarse a la demanda para evitar costos innecesarios durante períodos de baja utilización. |
+| AC13 | Eficiencia de conectividad | Las funcionalidades principales deben minimizar transferencias innecesarias de datos y mantener una experiencia utilizable en conexiones limitadas o inestables. |
+| AC14 | Integridad de pagos | Un cambio de plan o activación de una suscripción debe realizarse únicamente cuando el sistema pueda determinar correctamente el resultado de la operación de pago correspondiente. |
 
+## Escenario de alta concurrencia
 
-## Escenario de Alta Concurrencia
+Mentelyx podrá ser utilizado directamente por estudiantes de diferentes
+regiones y también por estudiantes beneficiados mediante convenios con
+instituciones educativas.
 
-Mentelyx está concebido como una plataforma que pueda ser utilizada por
-estudiantes de diferentes instituciones educativas.
+Durante el uso cotidiano se plantea un escenario aproximado de 1 500 usuarios
+concurrentes.
 
-Durante determinadas situaciones, como evaluaciones diagnósticas, inicio de
-programas académicos o actividades educativas de participación masiva, una
-gran cantidad de estudiantes podría utilizar la plataforma simultáneamente.
+Determinadas actividades pueden producir incrementos importantes de demanda,
+especialmente:
 
-Para efectos del análisis arquitectónico se establecen los siguientes
-escenarios de carga:
+- evaluaciones programadas;
+- simulacros masivos;
+- inicio de nuevos ciclos educativos;
+- publicación de nuevas actividades;
+- períodos de preparación para exámenes.
 
-- Operación habitual: aproximadamente 1 500 usuarios concurrentes.
-- Incremento de demanda: entre 1 500 y 10 000 usuarios concurrentes.
-- Escenario máximo de prueba: hasta 15 000 usuarios concurrentes.
+Para las pruebas de arquitectura se considerará un escenario máximo de hasta
+15 000 usuarios concurrentes.
 
-La concurrencia no solamente implica estudiantes conectados, debido a que
-cada sesión puede generar múltiples solicitudes relacionadas con actividades,
-respuestas, contenidos, pistas, retroalimentación y progreso.
-
-Por esta razón, rendimiento y escalabilidad constituyen atributos de calidad
-relevantes para las futuras decisiones arquitectónicas.
+Un usuario activo puede generar múltiples solicitudes relacionadas con
+contenidos, ejercicios, respuestas, pistas, retroalimentación, progreso y
+evaluaciones. Por esta razón, la cantidad de usuarios conectados no representa
+por sí sola la totalidad de la carga que deberá soportar la plataforma.

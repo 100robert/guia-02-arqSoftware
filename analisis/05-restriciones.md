@@ -4,34 +4,40 @@
 
 | ID | Restricción | Descripción |
 |---|---|---|
-| RC01 | Aplicación web | La primera versión deberá ser accesible mediante navegadores modernos. |
+| RC01 | Aplicación web | La primera versión de Mentelyx deberá ser accesible mediante navegadores web modernos. |
 | RC02 | Mobile-first | La experiencia del estudiante deberá priorizar dispositivos móviles, manteniendo compatibilidad con tablets y computadoras. |
-| RC03 | Infraestructura cloud | La solución deberá poder desplegarse utilizando infraestructura en la nube. |
-| RC04 | Alta concurrencia | La solución deberá considerar aproximadamente 1 500 usuarios concurrentes en operación habitual y escenarios de prueba de hasta 15 000. |
-| RC05 | Inteligencia artificial | Mentelyx deberá incorporar un componente inteligente para analizar el desempeño y contribuir a la personalización del aprendizaje. |
-| RC06 | Bajo costo | Las decisiones tecnológicas deberán considerar el costo de infraestructura y permitir crecimiento progresivo. |
-| RC07 | Privacidad | Los datos individuales de aprendizaje deberán ser accesibles únicamente por usuarios autorizados. |
-| RC08 | Control de versiones | El código fuente y la documentación deberán gestionarse mediante Git y GitHub. |
-| RC09 | Educación secundaria | La primera versión estará orientada inicialmente a estudiantes de educación secundaria. |
-| RC10 | Dominio inicial | Matemática será el área curricular utilizada para validar la primera versión. |
-| RC11 | Multiinstitución | La solución deberá permitir que diferentes instituciones educativas utilicen la misma plataforma manteniendo separada su información. |
-| RC12 | Conectividad | La solución deberá considerar que algunos estudiantes pueden utilizar conexiones a Internet limitadas o inestables. |
-| RC13 | Apoyo educativo | Mentelyx será una herramienta complementaria y no sustituirá la función pedagógica del docente. |
+| RC03 | Despliegue cloud | La solución deberá poder desplegarse utilizando infraestructura en la nube. |
+| RC04 | Alta concurrencia | La arquitectura deberá considerar aproximadamente 1 500 usuarios concurrentes durante la operación habitual y escenarios de prueba de hasta 15 000 usuarios concurrentes. |
+| RC05 | Inteligencia artificial | Mentelyx deberá incorporar un componente inteligente relacionado con el análisis del desempeño y la personalización del aprendizaje. |
+| RC06 | Bajo costo | Las decisiones tecnológicas deberán considerar el costo de infraestructura y evitar mantener permanentemente recursos dimensionados para la carga máxima. |
+| RC07 | Privacidad | La información individual de aprendizaje deberá estar disponible únicamente para usuarios autorizados. |
+| RC08 | Control de versiones | El código fuente y la documentación del proyecto deberán gestionarse mediante Git y mantenerse en un repositorio compartido. |
+| RC09 | Niveles educativos | Mentelyx se diseñará para permitir contenidos de Primaria, Secundaria y Preuniversitario. |
+| RC10 | Alcance del prototipo | La primera versión funcional utilizará Matemática de nivel Secundaria como dominio de validación. |
+| RC11 | Suscripciones | La solución deberá permitir diferentes niveles de acceso y contemplar planes de suscripción. |
+| RC12 | Convenios opcionales | Mentelyx podrá establecer convenios con instituciones educativas, pero su funcionamiento no deberá depender de que exista un convenio. |
+| RC13 | Verificación docente | Ningún usuario podrá obtener privilegios de docente sin completar previamente un proceso de aprobación definido por Mentelyx. |
+| RC14 | Servicio externo de pagos | Las operaciones monetarias deberán procesarse mediante una pasarela de pago externa; Mentelyx no deberá almacenar directamente datos sensibles de tarjetas bancarias. |
+| RC15 | Conectividad | La solución deberá considerar que determinados estudiantes pueden utilizar conexiones a Internet limitadas o inestables. |
+| RC16 | Independencia institucional | Un estudiante deberá poder utilizar Mentelyx sin necesidad de estar vinculado a un colegio, academia o institución educativa asociada. |
 
-## Decisiones aún no establecidas
+## Decisiones tecnológicas aún no establecidas
 
 En esta etapa todavía no se consideran restricciones las siguientes
-decisiones tecnológicas:
+decisiones:
 
 - estilo arquitectónico definitivo;
-- lenguaje y framework de backend;
-- tecnología de frontend;
+- lenguaje del backend;
+- framework de frontend;
 - motor de base de datos;
-- mecanismo de cache;
-- sistema de mensajería;
+- mecanismo de caché;
+- tecnología de mensajería;
 - proveedor cloud;
-- estrategia de balanceo;
-- tecnología utilizada para desplegar el componente de inteligencia artificial.
+- estrategia de balanceo de carga;
+- tecnología utilizada para implementar el componente de inteligencia
+  artificial;
+- proveedor de pagos;
+- proveedor de notificaciones.
 
-Estas decisiones serán analizadas posteriormente tomando como base los
-drivers arquitectónicos identificados.
+Estas decisiones deberán determinarse posteriormente tomando como base los
+drivers arquitectónicos del sistema.

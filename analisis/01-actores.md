@@ -2,21 +2,33 @@
 
 ## Mentelyx
 
-| Actor | Descripción | ¿Qué necesita realizar? |
+Los actores representan a las personas y sistemas externos que interactúan
+directamente con Mentelyx.
+
+| Actor | Descripción | Necesidades principales |
 |---|---|---|
-| Estudiante | Usuario principal del proceso de aprendizaje personalizado. | Incorporarse a un grupo, realizar evaluaciones, estudiar contenidos, resolver ejercicios, solicitar pistas, recibir retroalimentación y consultar su progreso. |
-| Docente | Responsable del acompañamiento educativo de uno o más grupos. | Crear o gestionar grupos, asignar contenidos disponibles y consultar progreso y dificultades de sus estudiantes. |
-| Responsable de la Institución Educativa | Usuario encargado de gestionar la incorporación y organización de la institución dentro de Mentelyx. | Gestionar docentes, grupos y configuraciones básicas de su institución. |
-| Servicio de Notificaciones | Servicio externo encargado de distribuir determinados avisos generados por Mentelyx. | Recibir solicitudes de notificación y entregar avisos a los usuarios. |
+| Estudiante | Usuario principal de Mentelyx y destinatario del proceso de aprendizaje personalizado. | Registrarse, seleccionar su nivel educativo, realizar diagnósticos, acceder a contenidos, resolver ejercicios, solicitar pistas, recibir retroalimentación, seguir una ruta personalizada, realizar simulacros y consultar su progreso. |
+| Docente | Profesional previamente verificado por Mentelyx que participa en actividades de acompañamiento educativo. | Acceder a las funcionalidades docentes autorizadas, acompañar estudiantes asignados y proporcionar orientación educativa cuando corresponda. |
+| Operador de Mentelyx | Usuario interno responsable de administrar determinados elementos de la plataforma. | Gestionar contenido educativo, ejercicios, docentes, planes, convenios y configuraciones de la plataforma. |
+| Servicio de Pago | Sistema externo utilizado para procesar pagos relacionados con las suscripciones. | Recibir solicitudes de pago y comunicar el resultado de las operaciones. |
+| Servicio de Notificaciones | Sistema externo utilizado para entregar determinados avisos a los usuarios. | Recibir solicitudes de notificación y realizar su entrega mediante los canales disponibles. |
 
 ## Consideraciones
 
-El componente de inteligencia artificial forma parte interna de Mentelyx,
-por lo que no se considera un actor externo.
+Mentelyx funciona independientemente de colegios, academias u otras
+instituciones educativas.
 
-El Responsable de la Institución Educativa representa a la persona autorizada
-por la institución para gestionar su espacio dentro de la plataforma. No
-representa necesariamente un cargo específico del sistema educativo peruano.
+Una institución educativa puede establecer un convenio con Mentelyx, pero
+la pertenencia a una institución no es un requisito para que un estudiante
+pueda utilizar la plataforma.
 
-En la primera versión no se considera necesaria una interfaz de administración
-global de Mentelyx para los operadores técnicos de la plataforma.
+Las instituciones aliadas no se consideran inicialmente actores directos,
+debido a que la administración de los convenios será realizada por los
+operadores de Mentelyx.
+
+El componente de inteligencia artificial tampoco se considera un actor
+externo, debido a que forma parte de la solución desarrollada.
+
+El rol de docente requiere un proceso previo de verificación. Una persona no
+podrá obtener privilegios docentes simplemente seleccionando dicho rol durante
+su registro.
