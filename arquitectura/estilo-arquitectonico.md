@@ -6,4 +6,4 @@ El sistema utilizará un estilo arquitectónico de monolito modular, organizando
 
 ## Diagrama de arquitectura
 
-![Diagrama del estilo arquitectónico del Marketplace](images/estilo-arquitectonico.jpeg)
+![Diagrama del estilo arquitectónico del Marketplace](image/estilo-arquitectonico.jpeg)
